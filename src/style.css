@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  margin: 0; /* Elimina a borda padrão de 8px que o html cria ao redor do body. */
+  font-family: 'Poppins', sans-serif;
+}
+
+body * { 
+  box-sizing: border-box;
+}
+
+.main-login {
+  width: 100vw; /* % da largura da sua viewport(sua tela), onde 100vw = 1000px, 1vh = 10px0 */
+  height: 100vh;
+  background: #201b2c;
+  display: flex; /* Deixa os elementos do html lado a lado */
+  justify-content: center; /* Justifica a posição dos elementos da div no eixo x no centro. */
+  align-items: center; /* Justifica a posição dos elementos da div no eixo y no centro. */
+}
+
+.left-login {
+  width: 85vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Controlar a posição dos itens mesmo usando o flex. */
+}
+
+.left-login > h1 {
+  color: #9b53ff;
+  margin: 0;
+  justify-content: left;
+}
+
+.left-login-image {
+  width: 35vw;
+}
+
+.right-login {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-login {
+  width: 60%; /* Porcentagem pega o tamanho da div que está o card-login para si. */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px; /* Pega a margem de cima e baixo(30px) e dos lados (35px) */
+  background: #2f2841;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #00000056;
+}
+
+.card-login > h1::before {
+  content: url("./assets/log-in.svg");
+  margin-right: 0.4em;
+}
+
+.card-login > h1 {
+  color: #9b53ff;
+  font-weight: 800;
+  margin: 0;
+}
+
+.textfield {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.textfield > input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: #514869;
+  color: #f0ffffde;
+  font-size: 12pt;
+  box-shadow: 0px 10px 40px #00000056;
+  box-sizing: border-box;
+}
+
+.textfield > input:focus {
+  outline: none !important;
+  border: 3px solid #9b53ff;
+  box-shadow: 0px 10px 40px -12px #a600ff77;
+}
+
+.textfield > label {
+  color: #f0ffffde;
+  margin-bottom: 10px;
+}
+
+.textfield > input::placeholder {
+  color: #f0ffff94;
+}
+
+.checkboxfield {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin: 10px 0px;
+  color: #f0ffffde;
+}
+
+.checkboxfield > input {
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  border: 1px solid #f0ffffde;
+  border-radius: 6px;
+  outline: none;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.checkboxfield > input:checked {  
+  border: 1px solid #9b53ff;
+  background-color: #9b53ff;
+  accent-color: white;
+}
+
+.checkboxfield > input:checked + span::before {
+  content: '\2713';
+  display: block;
+  text-align: center;
+  color: #fafafa;
+  position: absolute;
+  cursor: pointer;
+}
+
+.checkboxfield > span {
+  padding: 0.2rem 0.25rem;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #2b134b;
+  background: #9b53ff;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px -12px #a600ff77;
+}
+
+.card-login-register {
+  color: #9b53ff;
+}
+
+.register-pointer {
+  font-weight: 800;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 950px) { /* Até a largura máxima for essa os seguintes elementos serão acionados: */
+  .card-login {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 600px){ /* Media querie para celular e telas menores.  */
+  .main-login {
+    flex-direction: column;
+  }
+  .left-login > h1 {
+    display: none;
+  }
+
+  .left-login {
+    width: 100%;
+    height: auto;
+  }
+
+  .right-login {
+    width: 100%;
+    height: auto;
+  }
+
+  .left-login-image {
+    width: 30vh;
+  }
+
+  .card-login {
+    width: 90%;
+  }
+
+}
